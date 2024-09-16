@@ -112,8 +112,11 @@ for i in range(params.nodeCount):
     if params.phystype != "":
         node.hardware_type = params.phystype
 
+    # Prepare interface
+    iface = node.addInterface("eth1", pg.IPv4Address('10.10.1.%d' % (i + 1),'255.255.255.0'))
+
     # setup dataset
-    nfsLan.addInterface(node.addInterface())
+    nfsLan.addInterface(iface)
 
     ### run setup scripts
     # Initialization script for the clients
