@@ -81,7 +81,7 @@ nfsLan.link_multiplexing = True
 nfsServer = request.RawPC(nfsServerName)
 nfsServer.disk_image = params.osImage
 # Attach server to lan.
-nfsLan.addInterface(nfsServer.addInterface())
+nfsLan.addInterface(nfsServer.addInterface(pg.IPv4Address('10.10.1.100', '255.255.255.0')))
 # Storage file system goes into a local (ephemeral) blockstore.
 nfsBS = nfsServer.Blockstore("nfsBS", nfsDirectory)
 nfsBS.size = "200GB"
