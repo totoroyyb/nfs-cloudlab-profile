@@ -1,9 +1,11 @@
-"""Create single/multiple inter-connected node with 10.10.1.x ip addresses
+"""Create single/multiple inter-connected nodes with 10.10.1.x IP addresses. An NFS server is attached to all nodes, mounted at `/nfs` path.
 
 Instructions:
-Wait for the experiment to start, and then log into one or more of the nodes
+General: Wait for the experiment to start, and then log into one or more of the nodes
 by clicking on them in the topology, and choosing the `shell` menu option.
-Use `sudo` to run root commands. 
+Use `sudo` to run root commands.
+
+You won't need to access the NFS server. Instead, you should majorly working with created instances marked as "node-*".
 """
 
 # Import the Portal object.
