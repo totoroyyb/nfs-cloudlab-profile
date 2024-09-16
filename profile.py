@@ -42,18 +42,6 @@ pc.defineParameter("phystype",  "Optional physical node type",
                    longDescription="Specify a single physical node type (pc3000,d710,etc) " +
                    "instead of letting the resource mapper choose for you.")
 
-pc.defineParameter("dualPort",  "Add two ifac on each node",
-                   portal.ParameterType.BOOLEAN, True,
-                   longDescription="If disabled, only one interface will be created. Otherwise, two interfaces will be used. If enabled, make sure this type of machine has at least two ports for experiments.")
-
-# For very large lans you might to tell the resource mapper to override the bandwidth constraints
-# and treat it a "best-effort"
-pc.defineParameter("bestEffort",  "Best Effort", portal.ParameterType.BOOLEAN, False,
-                    advanced=True,
-                    longDescription="For very large lans, you might get an error saying 'not enough bandwidth.' " +
-                    "This options tells the resource mapper to ignore bandwidth and assume you know what you " +
-                    "are doing, just give me the lan I ask for (if enough nodes are available).")
-
 # Sometimes you want all of nodes on the same switch, Note that this option can make it impossible
 # for your experiment to map.
 pc.defineParameter("sameSwitch",  "No Interswitch Links", portal.ParameterType.BOOLEAN, False,
