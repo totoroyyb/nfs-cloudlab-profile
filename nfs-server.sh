@@ -63,7 +63,7 @@ fi
 if ! grep -q "^$NFSDIR" /etc/exports; then
     # Will be owned by root/wheel, you will have to use sudo on the clients
     # to make sub directories and protect them accordingly.
-    mkdir -p -m 755 $NFSDIR
+    mkdir -p -m 770 $NFSDIR
 
     echo ""
     echo "Setting up NFS exports"
