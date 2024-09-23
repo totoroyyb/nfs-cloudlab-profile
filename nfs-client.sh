@@ -65,7 +65,7 @@ done
 
 # Create the local mount directory.
 if [ ! -e $NFSDIR ]; then
-    mkdir -p -m 755 $NFSDIR
+    mkdir -p -m 770 $NFSDIR
 fi
 
 mntopts=
