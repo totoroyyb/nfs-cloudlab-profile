@@ -68,6 +68,8 @@ if [ ! -e $NFSDIR ]; then
     mkdir -p -m 770 $NFSDIR
 fi
 
+chmod 770 $NFSDIR
+
 mntopts=
 if [ "$OS" = "Linux" ]; then
     mntopts="rw,bg,sync,hard,intr"
