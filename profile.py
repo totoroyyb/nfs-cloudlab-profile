@@ -113,20 +113,17 @@ for i in range(params.nodeCount):
     node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/nfs-client.sh"))
     #
     # install mount point && generate ssh keys
-    node.addService(pg.Execute(shell="bash",
-        command="/local/repository/ssh.sh > /tmp/ssh.log 2>&1"))
+    node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/ssh.sh > /tmp/ssh.log 2>&1"))
     #
     # node.addService(pg.Execute(shell="bash",
     #     command="/local/repository/mount.sh > /tmp/mount.log 2>&1"))
 
     # dependencies installation
-    node.addService(pg.Execute(shell="bash",
-        command="/local/repository/install-dependencies.sh > /tmp/dependencies.log 2>&1"))
+    node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/install-dependencies.sh > /tmp/dependencies.log 2>&1"))
 
 
     # increase number of open file descriptors
-    node.addService(pg.Execute(shell="bash",
-        command="/local/repository/ulimit.sh > /tmp/ulimit.log 2>&1"))
+    node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/ulimit.sh > /tmp/ulimit.log 2>&1"))
     
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
