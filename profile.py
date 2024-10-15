@@ -30,8 +30,9 @@ pc.defineParameter("nodeCount", "Number of Nodes", portal.ParameterType.INTEGER,
 
 # Pick your OS.
 imageList = [
-    ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')
+    ('urn:publicid:IDN+emulab.net+image+flashburst:ddb.ready', 'UBUNTU 22.04')
 ]
+# ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')
 
 pc.defineParameter("osImage", "Select OS image",
                    portal.ParameterType.IMAGE,
@@ -119,7 +120,7 @@ for i in range(params.nodeCount):
     #     command="/local/repository/mount.sh > /tmp/mount.log 2>&1"))
 
     # dependencies installation
-    node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/install-dependencies.sh > /tmp/dependencies.log 2>&1"))
+    # node.addService(pg.Execute(shell="sh", command="sudo /bin/bash /local/repository/install-dependencies.sh > /tmp/dependencies.log 2>&1"))
 
 
     # increase number of open file descriptors
