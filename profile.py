@@ -30,7 +30,7 @@ pc.defineParameter("nodeCount", "Number of Nodes", portal.ParameterType.INTEGER,
 
 # Pick your OS.
 imageList = [
-    ('urn:publicid:IDN+emulab.net+image+flashburst:ddb.ready', 'UBUNTU 22.04')
+    ('urn:publicid:IDN+emulab.net+image+flashburst:ddb.ready.img.dev1', 'UBUNTU 22.04')
 ]
 # ('urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU22-64-STD', 'UBUNTU 22.04')
 
